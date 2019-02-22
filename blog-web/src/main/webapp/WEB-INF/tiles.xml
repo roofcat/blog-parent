@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC  "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"  "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+	<!-- Templates -->
+	<definition name="layout-base" template="/WEB-INF/views/tiles/layouts/layout-base.jsp">
+		<put-attribute name="menu" value="inicio" cascade="true"/>  
+		<put-attribute name="smenu" value="" cascade="true"/>
+		<put-attribute name="title" value="" />
+		<put-attribute name="header" value="/WEB-INF/views/tiles/layouts/layout-header.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/WEB-INF/views/tiles/layouts/layout-footer.jsp" />
+		<put-list-attribute name="css" />
+		<put-list-attribute name="js" />
+	</definition>
+
+	<!-- Views -->
+	<definition name="home-index" extends="layout-base">
+		<put-attribute name="menu" value="home" cascade="true"/>  
+		<put-attribute name="smenu" value="homeIndex" cascade="true"/>
+		<put-attribute name="title" value="Blog Home" />
+		<put-attribute name="body" value="/WEB-INF/views/pages/home/index.jsp" />
+	</definition>
+
+	<!-- Error 400 Page -->
+	<definition name="error" extends="layout-base">
+		<put-attribute name="title" value="Error Page" />
+		<put-attribute name="header" value="" />
+		<put-attribute name="body" value="/WEB-INF/views/pages/error/error.jsp" />
+	</definition>
+
+</tiles-definitions>
