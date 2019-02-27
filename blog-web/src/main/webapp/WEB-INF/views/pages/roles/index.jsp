@@ -14,15 +14,29 @@
 			
 			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 				
-				<!-- inicio panel datatables -->
+				<!-- inicio panel menu -->
 				<div class="card">
 					
 					<div class="card-header">Mantenedor de Roles</div>
 					
 					<div class="card-body">
 						
-						<h5 class="card-title">Listado de Roles</h5>
+						<button class="btn btn-primary" type="button" id="btnNewRole">Crear nuevo rol</button>
+						
+					</div>
 					
+				</div>
+				<!-- fin panel menu -->
+				
+				<br>
+				
+				<!-- inicio panel datatables -->
+				<div class="card">
+					
+					<div class="card-header">Listado de Roles</div>
+					
+					<div class="card-body">
+						
 						<table class="table table-striped table-bordered table-hover" id="tableRoles">
 							<thead class="thead-dark">
 								<tr>

@@ -52,6 +52,10 @@ function listRoles () {
 				"defaultContent" : "",
 				"render": function ( data, type, row, meta ) {
 					var html = "<div align=\"center\">";
+					html += "<a class=\"btn btn-link\" href=\"#\" ";
+					html += "data-role-id=\"" + row.idRole + "\" ";
+					html += "data-role-name=\"" + row.nameRole + "\" ";
+					html += "onclick=\"editModal( this ); return false;\">Editar</a>";
 					html += "</div>";
 					return html;
 				},
@@ -63,5 +67,13 @@ function listRoles () {
 			$( "div.toolbar" ).html( $( "#filtroPeriodo" ).html() );
 		},
 	});
+	
+}
+
+function editModal ( component ) {
+	
+	var ahref = $( component );
+	var id = ahref.data( "role-id" );
+	var name = ahref.data( "role-name" );
 	
 }
