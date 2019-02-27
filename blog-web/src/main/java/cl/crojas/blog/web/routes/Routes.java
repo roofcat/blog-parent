@@ -11,6 +11,11 @@ public class Routes {
 		super();
 	}
 
+	/**
+	 * 
+	 * @author Christian Rojas N.
+	 *
+	 */
 	public static class Home {
 
 		private Home() {
@@ -18,6 +23,21 @@ public class Routes {
 		}
 
 		public static final String BASE = "/home";
+
+	}
+
+	/**
+	 * 
+	 * @author Christian Rojas N.
+	 *
+	 */
+	public static class Roles {
+
+		private Roles() {
+			super();
+		}
+
+		public static final String BASE = "/roles";
 
 	}
 

@@ -7,8 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import cl.crojas.blog.dto.RoleDTO;
-import cl.crojas.blog.service.bo.PostBO;
 import cl.crojas.blog.service.bo.RoleBO;
 import cl.crojas.blog.web.routes.Routes;
 
@@ -18,15 +16,12 @@ import cl.crojas.blog.web.routes.Routes;
  *
  */
 @Controller
-@RequestMapping(Routes.Home.BASE)
-public class HomeController extends BaseController {
+@RequestMapping(Routes.Roles.BASE)
+public class RoleController extends BaseController {
 
-	private static final Logger logger = Logger.getLogger(HomeController.class);
+	private static final Logger logger = Logger.getLogger(RoleController.class);
 
-	private static final String INDEX_VIEW = "home-index";
-
-	@Autowired
-	private PostBO postBO;
+	private static final String INDEX_VIEW = "role-index";
 
 	@Autowired
 	private RoleBO roleBO;
@@ -42,15 +37,8 @@ public class HomeController extends BaseController {
 
 			logger.debug(methodName + INICIANDO);
 
-			this.postBO.findAll();
-
-			RoleDTO roleDTO = new RoleDTO();
-			roleDTO.setNameRole("RoleTest");
-
-			this.roleBO.create(roleDTO);
-
 			logger.debug(methodName + PROCESO_FINALIZADO);
-			
+
 		} catch (Exception e) {
 
 			logger.error(methodName + e.getMessage(), e);
