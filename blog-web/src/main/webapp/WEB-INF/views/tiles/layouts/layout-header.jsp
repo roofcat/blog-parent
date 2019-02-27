@@ -21,7 +21,7 @@
     		<br/>
     		
     		<a class="navbar-brand" href="${pageContext.request.contextPath}/">
-				<img alt="blog" src="<c:url value='/img/logo.png' />" >
+				<img alt="blog" src="<c:url value='/resources/img/logo.png' />" >
  			</a>
     		
     	</div>

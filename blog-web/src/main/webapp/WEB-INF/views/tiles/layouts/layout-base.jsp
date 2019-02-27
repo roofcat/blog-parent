@@ -28,10 +28,12 @@
         <!-- Fuentes -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans" >
         
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" >
+		
+		<link rel="stylesheet" href="<c:url value='/resources/css/common/dataTables.bootstrap4.min.css' />" >
 		
 		<!-- Estilos Personalizados para la Plantilla -->
-		<link href="<c:url value='/resources/css/style.css' />" rel="stylesheet">
+		<link rel="stylesheet" href="<c:url value='/resources/css/common/style.css' />" >
 		
 		<!-- Lista de CSS agregadas en tiles -->
 		<tilesx:useAttribute id="cssList" name="css" classname="java.util.List" />
@@ -72,16 +74,18 @@
 		    </div>
 		</div>
 		
-		<!-- Scripts -->
-		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-        <script src="<c:url value='/resources/js/common/app.js' />" type="text/javascript"></script>
-        
-        <script>
+		<script>
 			var CONTEXT_PATH = "${pageContext.request.contextPath}";
 		</script>
 		
+		<!-- Scripts -->
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous" ></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous" ></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous" ></script>
+        <script src="<c:url value='/resources/js/common/jquery.dataTables.min.js' />" type="text/javascript" ></script>
+        <script src="<c:url value='/resources/js/common/dataTables.bootstrap4.min.js' />" type="text/javascript" ></script>
+        <script src="<c:url value='/resources/js/common/app.js' />" type="text/javascript" ></script>
+        
 		<!-- Lista de JS agregadas en tiles -->
 		<tilesx:useAttribute id="jsList" name="js" classname="java.util.List" />
 		<c:forEach var="jsFile" items="${jsList}">
