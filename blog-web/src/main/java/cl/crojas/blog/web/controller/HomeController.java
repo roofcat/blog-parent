@@ -7,7 +7,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import cl.crojas.blog.dto.PostDTO;
+import cl.crojas.blog.dto.RoleDTO;
 import cl.crojas.blog.service.bo.PostBO;
+import cl.crojas.blog.service.bo.RoleBO;
 import cl.crojas.blog.web.routes.Routes;
 
 /**
@@ -26,6 +29,9 @@ public class HomeController extends BaseController {
 	@Autowired
 	private PostBO postBO;
 
+	@Autowired
+	private RoleBO roleBO;
+
 	@GetMapping
 	public ModelAndView index() {
 
@@ -38,6 +44,11 @@ public class HomeController extends BaseController {
 			logger.debug(methodName + INICIANDO);
 
 			this.postBO.findAll();
+			
+			RoleDTO roleDTO = new RoleDTO();
+			roleDTO.setNameRole("RoleTest");
+			
+			this.roleBO.create(roleDTO);
 
 		} catch (Exception e) {
 

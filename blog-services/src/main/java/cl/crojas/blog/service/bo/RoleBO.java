@@ -16,9 +16,9 @@ public interface RoleBO {
 
 	List<RoleDTO> findAll() throws BusinessException;
 
-	RoleDTO create(RoleDTO postDTO) throws BusinessException;
+	RoleDTO create(RoleDTO roleDTO) throws BusinessException;
 
-	void update(RoleDTO postDTO) throws BusinessException;
+	void update(RoleDTO roleDTO) throws BusinessException;
 
 	void delete(long id) throws BusinessException;
 

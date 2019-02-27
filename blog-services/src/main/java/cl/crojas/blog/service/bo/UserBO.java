@@ -16,9 +16,9 @@ public interface UserBO {
 
 	List<UserDTO> findAll() throws BusinessException;
 
-	UserDTO create(UserDTO postDTO) throws BusinessException;
+	UserDTO create(UserDTO userDTO) throws BusinessException;
 
-	void update(UserDTO postDTO) throws BusinessException;
+	void update(UserDTO userDTO) throws BusinessException;
 
 	void delete(long id) throws BusinessException;
 

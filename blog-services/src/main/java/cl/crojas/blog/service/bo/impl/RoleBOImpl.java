@@ -117,7 +117,7 @@ public class RoleBOImpl extends BaseBO implements RoleBO {
 
 	@Override
 	@Transactional(readOnly = false)
-	public RoleDTO create(RoleDTO postDTO) throws BusinessException {
+	public RoleDTO create(RoleDTO roleDTO) throws BusinessException {
 
 		final String methodName = "create(): ";
 
@@ -129,7 +129,7 @@ public class RoleBOImpl extends BaseBO implements RoleBO {
 
 			RoleEntity entity = new RoleEntity();
 
-			PojoUtils.copyAllFields(postDTO, entity);
+			PojoUtils.copyAllFields(roleDTO, entity);
 
 			RoleEntity post = this.roleDAO.create(entity);
 
@@ -152,7 +152,7 @@ public class RoleBOImpl extends BaseBO implements RoleBO {
 
 	@Override
 	@Transactional(readOnly = false)
-	public void update(RoleDTO postDTO) throws BusinessException {
+	public void update(RoleDTO roleDTO) throws BusinessException {
 
 		final String methodName = "update(): ";
 
@@ -162,7 +162,7 @@ public class RoleBOImpl extends BaseBO implements RoleBO {
 
 			RoleEntity entity = new RoleEntity();
 
-			PojoUtils.copyAllFields(postDTO, entity);
+			PojoUtils.copyAllFields(roleDTO, entity);
 
 			this.roleDAO.update(entity);
 

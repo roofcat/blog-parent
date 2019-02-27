@@ -117,7 +117,7 @@ public class UserBOImpl extends BaseBO implements UserBO {
 
 	@Override
 	@Transactional(readOnly = false)
-	public UserDTO create(UserDTO postDTO) throws BusinessException {
+	public UserDTO create(UserDTO userDTO) throws BusinessException {
 
 		final String methodName = "create(): ";
 
@@ -129,7 +129,7 @@ public class UserBOImpl extends BaseBO implements UserBO {
 
 			UserEntity entity = new UserEntity();
 
-			PojoUtils.copyAllFields(postDTO, entity);
+			PojoUtils.copyAllFields(userDTO, entity);
 
 			UserEntity post = this.userDAO.create(entity);
 
@@ -152,7 +152,7 @@ public class UserBOImpl extends BaseBO implements UserBO {
 
 	@Override
 	@Transactional(readOnly = false)
-	public void update(UserDTO postDTO) throws BusinessException {
+	public void update(UserDTO userDTO) throws BusinessException {
 
 		final String methodName = "update(): ";
 
@@ -162,7 +162,7 @@ public class UserBOImpl extends BaseBO implements UserBO {
 
 			UserEntity entity = new UserEntity();
 
-			PojoUtils.copyAllFields(postDTO, entity);
+			PojoUtils.copyAllFields(userDTO, entity);
 
 			this.userDAO.update(entity);
 
