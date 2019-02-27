@@ -21,7 +21,7 @@ public class RoleController extends BaseController {
 
 	private static final Logger logger = Logger.getLogger(RoleController.class);
 
-	private static final String INDEX_VIEW = "role-index";
+	private static final String INDEX_VIEW = "roles-index";
 
 	@Autowired
 	private RoleBO roleBO;

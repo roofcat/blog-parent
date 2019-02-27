@@ -22,6 +22,13 @@
 		<put-attribute name="body" value="/WEB-INF/views/pages/home/index.jsp" />
 	</definition>
 
+	<definition name="roles-index" extends="layout-base">
+		<put-attribute name="menu" value="roles" cascade="true"/>  
+		<put-attribute name="smenu" value="rolesIndex" cascade="true"/>
+		<put-attribute name="title" value="Mantenedor de Roles" />
+		<put-attribute name="body" value="/WEB-INF/views/pages/roles/index.jsp" />
+	</definition>
+
 	<!-- Error 400 Page -->
 	<definition name="error" extends="layout-base">
 		<put-attribute name="title" value="Error Page" />
