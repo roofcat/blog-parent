@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 /**
@@ -24,7 +25,6 @@ public class UserEntity implements Serializable {
 	private static final long serialVersionUID = -7346070786845090389L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "RUT", unique = true, nullable = false, length = 10)
 	private String rut;
 

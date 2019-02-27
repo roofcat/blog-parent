@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 /**
@@ -22,7 +23,8 @@ public class RoleEntity implements Serializable {
 	private static final long serialVersionUID = 1996052397833357030L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@SequenceGenerator(name = "roles_id_role_generator", sequenceName = "roles_id_role_seq", allocationSize = 1)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "roles_id_role_generator")
 	@Column(name = "ID_ROLE", unique = true, nullable = false)
 	private Integer idRole;
 
