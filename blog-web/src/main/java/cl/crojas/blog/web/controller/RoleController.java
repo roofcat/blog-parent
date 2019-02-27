@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -86,6 +87,31 @@ public class RoleController extends BaseController {
 		logger.debug(methodName + FINALIZANDO);
 
 		return datatable;
+
+	}
+
+	@PostMapping(Routes.Roles.SAVE)
+	@ResponseBody
+	public Model save(Model model) {
+
+		final String methodName = "save(): ";
+
+		try {
+
+			logger.debug(methodName + INICIANDO);
+
+			logger.debug(methodName + PROCESO_FINALIZADO);
+
+		} catch (Exception e) {
+
+			logger.error(methodName + e.getMessage(), e);
+			model.addAttribute(ERROR, e.getMessage());
+
+		}
+
+		logger.debug(methodName + FINALIZANDO);
+
+		return model;
 
 	}
 
