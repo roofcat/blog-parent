@@ -59,3 +59,29 @@
 	</form:form>
 	
 </div>
+
+<!-- Modal Roles -->
+<div class="modal fade" id="roleModal" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="roleModalTitle"></h5>
+			</div>
+			<div class="modal-body">
+				
+				<input type="hidden" id="roleModalId">
+				<input type="hidden" id="roleModalAction">
+				
+				<div class="form-group">
+					<label class="col-form-label">Rol:</label>
+					<input class="form-control" type="text" id="roleModalName">
+				</div>
+				
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+			  	<button type="button" class="btn btn-primary" id="btnRoleModalSave">Guardar</button>
+			</div>
+		</div>
+	</div>
+</div>

@@ -39,6 +39,8 @@ public class Routes {
 
 		public static final String BASE = "/roles";
 
+		public static final String SAVE = "/save";
+
 	}
 
 }
