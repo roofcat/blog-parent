@@ -12,7 +12,7 @@ public class RoleDTO implements Serializable {
 
 	private static final long serialVersionUID = 3054673018746464851L;
 
-	private Integer idRole;
+	private long idRole;
 
 	private String nameRole;
 
@@ -22,11 +22,11 @@ public class RoleDTO implements Serializable {
 		super();
 	}
 
-	public Integer getIdRole() {
+	public long getIdRole() {
 		return this.idRole;
 	}
 
-	public void setIdRole(Integer idRole) {
+	public void setIdRole(long idRole) {
 		this.idRole = idRole;
 	}
 

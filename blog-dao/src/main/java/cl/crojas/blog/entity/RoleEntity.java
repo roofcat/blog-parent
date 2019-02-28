@@ -26,7 +26,7 @@ public class RoleEntity implements Serializable {
 	@SequenceGenerator(name = "roles_id_role_generator", sequenceName = "roles_id_role_seq", allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "roles_id_role_generator")
 	@Column(name = "ID_ROLE", unique = true, nullable = false)
-	private Integer idRole;
+	private long idRole;
 
 	@Column(name = "NAME_ROLE", length = 10)
 	private String nameRole;
@@ -38,11 +38,11 @@ public class RoleEntity implements Serializable {
 		super();
 	}
 
-	public Integer getIdRole() {
+	public long getIdRole() {
 		return this.idRole;
 	}
 
-	public void setIdRole(Integer idRole) {
+	public void setIdRole(long idRole) {
 		this.idRole = idRole;
 	}
 

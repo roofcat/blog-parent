@@ -66,6 +66,13 @@
 			<version>${jwt.version}</version>
 		</dependency>
 
+		<!-- Joda Time -->
+		<dependency>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
+			<version>2.10.1</version>
+		</dependency>
+
 		<!-- PMI DTO -->
 		<dependency>
 			<groupId>cl.crojas.blog</groupId>

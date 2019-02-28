@@ -22,4 +22,8 @@ public interface RoleBO {
 
 	void delete(long id) throws BusinessException;
 
+	boolean existByName(String name) throws BusinessException;
+
+	RoleDTO findByName(String name) throws BusinessException;
+
 }

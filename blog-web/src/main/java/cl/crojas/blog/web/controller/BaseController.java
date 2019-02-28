@@ -2,10 +2,16 @@ package cl.crojas.blog.web.controller;
 
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
+
+import cl.crojas.blog.service.bo.RoleBO;
 
 /**
  * 
@@ -42,12 +48,23 @@ public abstract class BaseController {
 	private MessageSource messageSource;
 
 	@Autowired
+	protected RoleBO roleBO;
+
+	@Autowired
 	protected void setMessageSource(MessageSource messageSource) {
 		this.messageSource = messageSource;
 	}
 
 	protected String getMessage(String key) {
 		return messageSource.getMessage(key, null, null);
+	}
+
+	protected Map<String, String> setupErrorMap(BindingResult bindingResult) {
+		Map<String, String> errors = new HashMap<>();
+		for (FieldError fieldError : bindingResult.getFieldErrors()) {
+			errors.put(fieldError.getField(), fieldError.getCode());
+		}
+		return errors;
 	}
 
 }

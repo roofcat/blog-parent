@@ -204,4 +204,62 @@ public class RoleBOImpl extends BaseBO implements RoleBO {
 
 	}
 
+	@Override
+	public boolean existByName(String name) throws BusinessException {
+
+		final String methodName = "existByName(): ";
+
+		boolean exist = false;
+
+		try {
+
+			logger.debug(methodName + INICIANDO);
+
+			this.roleDAO.findByName(name);
+
+			exist = true;
+
+			logger.debug(methodName + PROCESO_FINALIZADO);
+
+		} catch (Exception e) {
+
+			logger.error(methodName + e.getMessage(), e);
+
+		}
+
+		logger.debug(methodName + FINALIZANDO);
+
+		return exist;
+
+	}
+
+	@Override
+	public RoleDTO findByName(String name) throws BusinessException {
+
+		final String methodName = "findByName(): ";
+
+		RoleDTO dto = new RoleDTO();
+
+		try {
+
+			logger.debug(methodName + INICIANDO);
+
+			RoleEntity role = this.roleDAO.findByName(name);
+
+			PojoUtils.copyAllFields(role, dto);
+
+			logger.debug(methodName + PROCESO_FINALIZADO);
+
+		} catch (Exception e) {
+
+			logger.error(methodName + e.getMessage(), e);
+
+		}
+
+		logger.debug(methodName + FINALIZANDO);
+
+		return dto;
+
+	}
+
 }

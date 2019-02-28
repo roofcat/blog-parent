@@ -1,5 +1,6 @@
 package cl.crojas.blog.dao;
 
+import cl.crojas.blog.dao.exception.DAOException;
 import cl.crojas.blog.entity.RoleEntity;
 
 /**
@@ -8,5 +9,7 @@ import cl.crojas.blog.entity.RoleEntity;
  *
  */
 public interface RoleDAO extends DAO<RoleEntity, Long> {
+
+	RoleEntity findByName(String name) throws DAOException;
 
 }
