@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import cl.crojas.blog.dto.RoleDTO;
+import cl.crojas.blog.utils.Utils;
 import cl.crojas.blog.utils.model.datatable.DataTablesResponse;
 import cl.crojas.blog.web.enums.ActionEnum;
 import cl.crojas.blog.web.model.RoleModel;
@@ -115,6 +116,8 @@ public class RoleController extends BaseController {
 		try {
 
 			logger.debug(methodName + INICIANDO);
+
+			logger.debug(methodName + "Json: \n" + Utils.getObjToJSON(roleModel));
 
 			if (bindingResult.hasErrors()) {
 

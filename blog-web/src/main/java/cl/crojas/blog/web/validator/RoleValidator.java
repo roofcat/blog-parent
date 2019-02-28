@@ -58,7 +58,7 @@ public class RoleValidator extends BaseValidator {
 				if (exist)
 					errors.rejectValue(FIELD_NAME, ERROR_FIELD_NAME, MSG_ROLE_EXIST);
 
-				if (!Utils.isNullOrEmpty(model.getName()))
+				if (Utils.isNullOrEmpty(model.getName()))
 					errors.rejectValue(FIELD_NAME, ERROR_FIELD_NAME, MSG_FIELD_NAME);
 
 			} else if (ActionEnum.EDIT.equals(model.getAction())) {
@@ -66,7 +66,7 @@ public class RoleValidator extends BaseValidator {
 				if (Utils.isNullOrEmpty(model.getId()))
 					errors.rejectValue(FIELD_ID, ERROR_FIELD_ID, MSG_FIELD_ID);
 
-				if (!Utils.isNullOrEmpty(model.getName()))
+				if (Utils.isNullOrEmpty(model.getName()))
 					errors.rejectValue(FIELD_NAME, ERROR_FIELD_NAME, MSG_FIELD_NAME);
 
 				RoleDTO role = this.roleBO.findByName(model.getName());

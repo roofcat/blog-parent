@@ -62,7 +62,7 @@ public abstract class BaseController {
 	protected Map<String, String> setupErrorMap(BindingResult bindingResult) {
 		Map<String, String> errors = new HashMap<>();
 		for (FieldError fieldError : bindingResult.getFieldErrors()) {
-			errors.put(fieldError.getField(), fieldError.getCode());
+			errors.put(fieldError.getField(), fieldError.getDefaultMessage());
 		}
 		return errors;
 	}

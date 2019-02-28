@@ -1,7 +1,8 @@
 "use strict";
 
-var LIST_ROLES_ENDPOINT = CONTEXT_PATH + "/roles.json";
-var SAVE_ROLES_ENDPOINT = CONTEXT_PATH + "roles/save.json"
+var ROLES_ENDPOINT = "/roles";
+var LIST_ROLES_ENDPOINT = CONTEXT_PATH + ROLES_ENDPOINT + ".json";
+var SAVE_ROLES_ENDPOINT = CONTEXT_PATH + ROLES_ENDPOINT + "/save.json"
 
 var ROLE_MODAL = $( "#roleModal" );
 
@@ -110,6 +111,7 @@ function controlSaveRoleModal () {
 			}).done( function ( response ) {
 				
 				console.log( response );
+				
 			}).fail( function ( jqXHR, textStatus, errorThrown ) {
 				console.log( textStatus + ", " + errorThrown );
 			});

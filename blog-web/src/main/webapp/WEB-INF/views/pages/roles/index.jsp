@@ -74,7 +74,7 @@
 				
 				<div class="form-group">
 					<label class="col-form-label">Rol:</label>
-					<input class="form-control" type="text" id="roleModalName">
+					<input class="form-control" type="text" id="roleModalName" autofocus >
 				</div>
 				
 			</div>

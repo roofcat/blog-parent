@@ -51,6 +51,8 @@ public class RoleDAOImpl extends JPADAO<RoleEntity, Long> implements RoleDAO {
 			TypedQuery<RoleEntity> query = this.em.createQuery(sql.toString(), RoleEntity.class);
 			query.setParameter(PAR_NAME_ROLE, name.toLowerCase());
 
+			role = query.getSingleResult();
+
 			logger.debug(methodName + PROCESO_FINALIZADO);
 
 		} catch (NoResultException e) {
