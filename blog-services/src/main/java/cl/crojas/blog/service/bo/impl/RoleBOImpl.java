@@ -205,6 +205,35 @@ public class RoleBOImpl extends BaseBO implements RoleBO {
 	}
 
 	@Override
+	public boolean existById(long id) throws BusinessException {
+
+		final String methodName = "existById(): ";
+
+		boolean exist = false;
+
+		try {
+
+			logger.debug(methodName + INICIANDO);
+
+			this.roleDAO.find(id);
+
+			exist = true;
+
+			logger.debug(methodName + PROCESO_FINALIZADO);
+
+		} catch (Exception e) {
+
+			logger.error(methodName + e.getMessage(), e);
+
+		}
+
+		logger.debug(methodName + FINALIZANDO);
+
+		return exist;
+
+	}
+
+	@Override
 	public boolean existByName(String name) throws BusinessException {
 
 		final String methodName = "existByName(): ";

@@ -39,6 +39,7 @@ public class RoleController extends BaseController {
 
 	private static final String MSG_ADD_ROLE_SUCCESS = "Rol creado exitosamente.";
 	private static final String MSG_UPDATE_ROLE_SUCCESS = "Rol actualizado exitosamente.";
+	private static final String MSG_DELETE_ROLE_SUCCESS = "Rol eliminado exitosamente.";
 
 	private static final String INDEX_VIEW = "roles-index";
 
@@ -147,6 +148,48 @@ public class RoleController extends BaseController {
 					model.addAttribute(SUCCESS, MSG_UPDATE_ROLE_SUCCESS);
 
 				}
+
+			}
+
+			logger.debug(methodName + PROCESO_FINALIZADO);
+
+		} catch (Exception e) {
+
+			logger.error(methodName + e.getMessage(), e);
+			model.addAttribute(ERROR, e.getMessage());
+
+		}
+
+		logger.debug(methodName + FINALIZANDO);
+
+		return model;
+
+	}
+
+	@PostMapping(Routes.Roles.DELETE)
+	@ResponseBody
+	public Model delete(@RequestBody @Valid RoleModel roleModel, BindingResult bindingResult, Model model) {
+
+		final String methodName = "delete(): ";
+
+		try {
+
+			logger.debug(methodName + INICIANDO);
+
+			logger.debug(methodName + "Json: \n" + Utils.getObjToJSON(roleModel));
+
+			if (bindingResult.hasErrors()) {
+
+				logger.debug(methodName + EXISTEN_ERRORES_VALIDACION);
+				model.addAttribute(ERRORS, super.setupErrorMap(bindingResult));
+
+			} else {
+
+				logger.debug(methodName + SIN_ERRORES_VALIDACION);
+
+				super.roleBO.delete(roleModel.getId());
+
+				model.addAttribute(SUCCESS, MSG_DELETE_ROLE_SUCCESS);
 
 			}
 

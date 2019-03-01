@@ -41,6 +41,8 @@ public class Routes {
 
 		public static final String SAVE = "/save";
 
+		public static final String DELETE = "/delete";
+
 	}
 
 }

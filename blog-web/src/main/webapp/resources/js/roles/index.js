@@ -3,6 +3,7 @@
 var ROLES_ENDPOINT = "/roles";
 var LIST_ROLES_ENDPOINT = CONTEXT_PATH + ROLES_ENDPOINT + ".json";
 var SAVE_ROLES_ENDPOINT = CONTEXT_PATH + ROLES_ENDPOINT + "/save.json"
+var DELETE_ROLES_ENDPOINT = CONTEXT_PATH + ROLES_ENDPOINT + "/delete.json"
 
 var ROLE_MODAL = $( "#roleModal" );
 

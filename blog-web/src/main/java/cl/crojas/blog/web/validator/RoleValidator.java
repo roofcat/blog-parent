@@ -31,6 +31,7 @@ public class RoleValidator extends BaseValidator {
 	private static final String MSG_FIELD_ID_EXIST = "El rol a modificar ya existe.";
 	private static final String MSG_FIELD_NAME = "Campo Nombre es requerido.";
 	private static final String MSG_ROLE_EXIST = "El rol ya existe.";
+	private static final String MSG_ROLE_NOT_EXIST = "El rol no existe.";
 	private static final String MSG_FIELD_ACTION = "Acción no válido.";
 
 	@Override
@@ -73,6 +74,16 @@ public class RoleValidator extends BaseValidator {
 
 				if (role.getIdRole() != model.getId().longValue())
 					errors.rejectValue(FIELD_ID, ERROR_FIELD_ID, MSG_FIELD_ID_EXIST);
+
+			} else if (ActionEnum.DELETE.equals(model.getAction())) {
+
+				if (Utils.isNullOrEmpty(model.getId()))
+					errors.rejectValue(FIELD_ID, ERROR_FIELD_ID, MSG_FIELD_ID);
+
+				boolean exist = super.roleBO.existById(model.getId());
+
+				if (!exist)
+					errors.rejectValue(FIELD_NAME, ERROR_FIELD_NAME, MSG_ROLE_NOT_EXIST);
 
 			} else {
 

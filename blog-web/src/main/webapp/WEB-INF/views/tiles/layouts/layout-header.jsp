@@ -12,26 +12,32 @@
 <tilesx:useAttribute name="smenu" id="smenu" classname="java.lang.String "/>
 
 <!-- Fixed navbar -->
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
 	
-	<div class="container">
-		
-    	<div class="navbar-header">
-    		
-    		<br/>
-    		
-    		<a class="navbar-brand" href="${pageContext.request.contextPath}/">
-				<img alt="blog" src="<c:url value='/resources/img/logo.png' />" >
- 			</a>
-    		
-    	</div>
-    	
-    	<div id="navbar" class="collapse navbar-collapse">
-    		
-    		
-      		
-    	</div>
-    	
+	<a class="navbar-brand" href="${pageContext.request.contextPath}/">
+		<%-- <img alt="blog" src="<c:url value='/resources/img/logo.png' />" > --%>
+		Blog
+	</a>
+  	<div class="collapse navbar-collapse" id="navbarCollapse">
+  		
+  		<ul class="navbar-nav mr-auto">
+	 		
+<!-- 			<li class="nav-item"> -->
+<!-- 				<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a> -->
+<!-- 			</li> -->
+			
+			<li class="nav-item dropdown">
+				
+				<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mantenedores</a>
+				
+				<div class="dropdown-menu">
+		        	<a class="dropdown-item" href="${pageContext.request.contextPath}/roles">Roles</a>
+		        </div>
+				
+			</li>
+	  		
+  		</ul>
+  		
   	</div>
   	
 </nav>
