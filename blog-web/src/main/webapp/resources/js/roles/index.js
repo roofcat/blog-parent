@@ -6,6 +6,8 @@ var SAVE_ROLES_ENDPOINT = CONTEXT_PATH + ROLES_ENDPOINT + "/save.json"
 
 var ROLE_MODAL = $( "#roleModal" );
 
+var datatables = null;
+
 $( document ).ready( function () {
 	
 	listRoles();
@@ -18,18 +20,27 @@ $( document ).ready( function () {
 	
 });
 
+function reloadRoles () {
+	if ( datatables ) {
+		datatables.search( "" ).draw();
+		datatables.ajax.reload();
+	} else {
+		listRoles();
+	}
+}
+
 function listRoles () {
 	
-	$( "#tableRoles" )
-	$( "#tableRoles" ).DataTable({
+	datatables = $( "#tableRoles" ).DataTable({
 		language: {
 			url: DT_PARAMETERS,
 		},
+		//destroy: true,
 		processing: true,
 		serverSide: false,
 		pageLength: 10,
 		lengthChange: false,
- 		searching: false,
+ 		searching: true,
  		cache: false,
 		ajax: {
 			type : "POST",
@@ -110,14 +121,20 @@ function controlSaveRoleModal () {
 				
 			}).done( function ( response ) {
 				
+				if ( response.success )
+					ROLE_MODAL.modal( "hide" );
+				
 				console.log( response );
+				showMessage( response );
+				
+				reloadRoles();
 				
 			}).fail( function ( jqXHR, textStatus, errorThrown ) {
 				console.log( textStatus + ", " + errorThrown );
 			});
 			
 		} else {
-			console.log( "Model Inválido" );
+			showMessage( { "error": "Formulario Inválido" } );
 		}
 		
 	});

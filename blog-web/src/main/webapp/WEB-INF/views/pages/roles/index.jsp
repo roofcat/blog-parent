@@ -17,7 +17,7 @@
 				<!-- inicio panel menu -->
 				<div class="card">
 					
-					<div class="card-header">Mantenedor de Roles</div>
+					<div class="card-header bg-dark text-white"">Mantenedor de Roles</div>
 					
 					<div class="card-body">
 						
@@ -33,7 +33,7 @@
 				<!-- inicio panel datatables -->
 				<div class="card">
 					
-					<div class="card-header">Listado de Roles</div>
+					<div class="card-header bg-dark text-white">Listado de Roles</div>
 					
 					<div class="card-body">
 						

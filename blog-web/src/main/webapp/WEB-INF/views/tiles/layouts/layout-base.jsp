@@ -50,9 +50,9 @@
 		<div class="container" style="margin-top: 60px;">
 			
 			<!-- Mensaje General -->
-		    <div id="globalMensaje" style="display:none" class="alert alert-dismissable">
+		    <div id="globalMessage" style="display:none" class="alert alert-dismissable">
 				<a href="#" class="close" data-hide="alert" aria-label="close">×</a>
-			   	<p id="textoAlerta"></p>
+			   	<p id="textAlert"></p>
 			</div>
 			
 			<tiles:insertAttribute name="body" />
